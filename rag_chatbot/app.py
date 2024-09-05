@@ -58,14 +58,7 @@ if uploaded_file:
             # Input prompt from user
             user_prompt = st.text_input("Enter your question here")
             if user_prompt:
-                # start = time.process_time()
                 response = retrieval_chain.invoke({"input": user_prompt})
-                # response_time = time.process_time() - start
-                # st.write(f"Response time: {response_time:.2f} seconds")
                 st.write(response['answer'])
 
-                # With a Streamlit expander
-                # with st.expander("Document Similarity Search"):
-                #     # Find the relevant chunks
-                #     for i, doc in enumerate(response.get("context", [])):
-                #         st.write(doc.page_content)
+                
